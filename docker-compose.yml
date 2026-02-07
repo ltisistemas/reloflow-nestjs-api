@@ -1,0 +1,15 @@
+services:
+  postgres:
+        image: postgres:18-alpine
+        restart: always
+        environment:
+            POSTGRES_USER: admin
+            POSTGRES_PASSWORD: admin
+            POSTGRES_DB: reloflow-nestjs-db
+        ports:
+            - "5432:5432"
+        volumes:
+            - pgdata_reloflow_nestjs:/var/lib/postgresql/data
+    
+volumes:
+    pgdata_reloflow_nestjs:

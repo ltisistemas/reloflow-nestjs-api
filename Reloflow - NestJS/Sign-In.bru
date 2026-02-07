@@ -1,0 +1,30 @@
+meta {
+  name: Sign-In
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{base_url}}/api/auth/sing-in
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "email": "luizltisistemas@gmail.com",
+    "password": "sEnha004"
+  }
+}
+
+script:post-response {
+  const data = res.body
+  if (data && data.access_token) {
+    bru.setEnvVar("access_token", data.access_token)
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
