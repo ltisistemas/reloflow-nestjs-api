@@ -1,0 +1,34 @@
+meta {
+  name: Sign-Up
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{base_url}}/api/register/sign-up
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "firstName": "Cintia",
+    "lastName": "dos Santos Bezerra",
+    "email": "admincintiasantos@gmail.com",
+    "password": "sEnha004",
+    "gender": "WOAMAN",
+    "tax_number": "06516325448"
+  }
+}
+
+script:post-response {
+  const data = res.body
+  if (data && data.access_token) {
+    bru.setEnvVar("access_token", data.access_token)
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

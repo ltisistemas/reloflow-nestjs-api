@@ -7,10 +7,7 @@ import { UserCreateDto } from 'src/domain/entities/user/user-create.dto';
 
 @Controller('api/register')
 export class AuthController {
-  constructor(
-    private service: AuthService,
-    private userService: UserService,
-  ) {}
+  constructor(private service: AuthService) {}
 
   @Post('sing-in')
   @HttpCode(HttpStatus.OK)
@@ -23,7 +20,7 @@ export class AuthController {
   @HttpCode(201)
   @ApiOperation({ summary: 'Criação de um novo usuário' })
   @ApiBody({ type: UserCreateDto })
-  async signUp(@Body() dto: UserCreateDto) {
-    return await this.userService.create(dto);
+  signUp(@Body() dto: UserCreateDto) {
+    return this.service.signUp(dto);
   }
 }
