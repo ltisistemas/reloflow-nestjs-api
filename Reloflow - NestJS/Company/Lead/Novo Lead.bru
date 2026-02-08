@@ -1,0 +1,31 @@
+meta {
+  name: Novo Lead
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{base_url}}/api/auth/lead
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "name": "Cintia e Luiz",
+    "company_id": "11f12833-0522-41f3-9c80-d3dbb2753a3d",
+    "rendaFamiliar": 0,
+    "zipCode": "51030390",
+    "streetAddress": "R. José Paraíso",
+    "streetAddressNumber": "135",
+    "streetAddressComplement": "APTO 02",
+    "city": "Recife",
+    "state": "PE",
+    "country": "Brasil"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

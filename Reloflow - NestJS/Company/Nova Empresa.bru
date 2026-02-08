@@ -1,0 +1,23 @@
+meta {
+  name: Nova Empresa
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{base_url}}/api/auth/company
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "name": "LTI Sistemas",
+    "tax_number": "06516325448"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

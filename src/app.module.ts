@@ -7,6 +7,8 @@ import { UserHttpModule } from './application/modules/user/user-http.module';
 import { ThrottlerModule } from '@nestjs/throttler';
 import { AuthHttpModule } from './application/modules/auth/auth-http.module';
 import { JwtModule } from '@nestjs/jwt';
+import { CompanyHttpModule } from './application/modules/company/company-http.module';
+import { LeadHttpModule } from './application/modules/lead/company-http.module';
 
 @Module({
   imports: [
@@ -35,6 +37,8 @@ import { JwtModule } from '@nestjs/jwt';
     }),
     UserHttpModule,
     AuthHttpModule,
+    CompanyHttpModule,
+    LeadHttpModule,
   ],
   controllers: [AppController],
   providers: [AppService],

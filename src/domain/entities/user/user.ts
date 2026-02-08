@@ -3,11 +3,13 @@ import {
   CreateDateColumn,
   DeleteDateColumn,
   Entity,
+  OneToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
 import { USER_STATUS } from './user-status-enu';
 import { USER_GENDER } from './user-gender-enum';
+import { Company } from '../leads/company.modal';
 
 @Entity({ name: 'usuarios' })
 export class User {
@@ -87,6 +89,12 @@ export class User {
 
   @Column({ default: USER_STATUS.ACTIVE })
   status: USER_STATUS;
+
+  @OneToMany(() => Company, (c) => c.user, {
+    cascade: true, // Cria, Atualiza e Exclui Leads junto com User
+    eager: true, // não carrega automaticamente
+  })
+  companies: Company[];
 
   @CreateDateColumn({
     type: 'time with time zone',

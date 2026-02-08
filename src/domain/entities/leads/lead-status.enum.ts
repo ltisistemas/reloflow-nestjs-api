@@ -1,0 +1,4 @@
+export enum LEAD_STATUS {
+  ACTIVE = 'ACTIVE',
+  INACTIVE = 'INACTIVE',
+}

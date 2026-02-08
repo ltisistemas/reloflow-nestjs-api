@@ -1,0 +1,37 @@
+meta {
+  name: Atualizar Lead
+  type: http
+  seq: 2
+}
+
+put {
+  url: {{base_url}}/api/auth/lead/a9a6c317-db75-46ea-9032-eca3d09d0389
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "id": "a9a6c317-db75-46ea-9032-eca3d09d0389",
+    "company_id": "11f12833-0522-41f3-9c80-d3dbb2753a3d",
+    "name": "Cintia e Luiz",
+    "rendaFamiliar": 0,
+    "zipCode": "51030390",
+    "streetAddress": "R. José Paraíso",
+    "streetAddressNumber": "135",
+    "streetAddressComplement": "APTO 02",
+    "city": "Recife",
+    "state": "PE",
+    "country": "Brasil",
+    "status": "ACTIVE",
+    "position": "PRIMEIRO_PAGAMENTO",
+    "createdAt": "21:47:39.053163+00",
+    "updatedAt": "21:47:39.053163+00",
+    "deletedAt": null
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

@@ -1,7 +1,5 @@
 import { Module } from '@nestjs/common';
-import { APP_GUARD } from '@nestjs/core';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { AuthGuard } from 'src/application/guards/auth.guard';
 import { Company } from 'src/domain/entities/leads/company.modal';
 import { Lead } from 'src/domain/entities/leads/lead.modal';
 import { User } from 'src/domain/entities/user/user';
@@ -10,4 +8,4 @@ import { User } from 'src/domain/entities/user/user';
   imports: [TypeOrmModule.forFeature([User, Lead, Company])],
   exports: [TypeOrmModule],
 })
-export class UserModule {}
+export class LeadModule {}
