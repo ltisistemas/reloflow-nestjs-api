@@ -23,4 +23,10 @@ export class LeadCreateDto {
   state?: string;
   @ApiProperty({ nullable: true })
   country?: string;
+
+  @ApiProperty({ nullable: true })
+  cidadesPretendidas?: string;
+
+  @ApiProperty({ nullable: true })
+  distritoSelecionado?: string;
 }

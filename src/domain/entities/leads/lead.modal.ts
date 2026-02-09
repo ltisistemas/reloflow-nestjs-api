@@ -60,6 +60,14 @@ export class Lead {
   @ApiProperty({ nullable: true })
   country?: string;
 
+  @Column({ type: 'varchar', nullable: true, name: 'distrito_selecionado' })
+  @ApiProperty({ nullable: true })
+  distritoSelecionado?: string;
+
+  @Column({ type: 'varchar', nullable: true, name: 'ciades_pretendidas' })
+  @ApiProperty({ nullable: true })
+  cidadesPretendidas?: string;
+
   @Column({ default: LEAD_STATUS.ACTIVE, type: 'enum', enum: LEAD_STATUS })
   @ApiProperty({ nullable: true })
   status: LEAD_STATUS;
