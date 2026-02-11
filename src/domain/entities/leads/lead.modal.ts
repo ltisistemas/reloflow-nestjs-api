@@ -50,6 +50,10 @@ export class Lead {
 
   @Column({ type: 'varchar', nullable: true })
   @ApiProperty({ nullable: true })
+  neighborhood?: string;
+
+  @Column({ type: 'varchar', nullable: true })
+  @ApiProperty({ nullable: true })
   city?: string;
 
   @Column({ type: 'varchar', nullable: true })
@@ -67,6 +71,38 @@ export class Lead {
   @Column({ type: 'varchar', nullable: true, name: 'ciades_pretendidas' })
   @ApiProperty({ nullable: true })
   cidadesPretendidas?: string;
+
+  @Column({ type: 'decimal', nullable: true, name: 'valor_inicial_renda' })
+  @ApiProperty({ nullable: true })
+  valorInicialRenda?: number;
+
+  @Column({ type: 'decimal', nullable: true, name: 'valor_final_renda' })
+  @ApiProperty({ nullable: true })
+  valorFinalRenda?: number;
+
+  @Column({
+    type: 'int',
+    nullable: true,
+    name: 'quantidade_membros_na_familia',
+  })
+  @ApiProperty({ nullable: true })
+  quantidadeMembrosNaFamilia?: number;
+
+  @Column({
+    type: 'int',
+    nullable: true,
+    name: 'quantidade_de_filhos',
+  })
+  @ApiProperty({ nullable: true })
+  quantidadeFilhos?: number;
+
+  @Column({
+    type: 'varchar',
+    nullable: true,
+    name: 'idade_dos_filhos',
+  })
+  @ApiProperty({ nullable: true })
+  idadeDosFilhos?: string;
 
   @Column({ default: LEAD_STATUS.ACTIVE, type: 'enum', enum: LEAD_STATUS })
   @ApiProperty({ nullable: true })

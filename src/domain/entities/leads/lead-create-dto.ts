@@ -18,6 +18,8 @@ export class LeadCreateDto {
   @ApiProperty({ nullable: true })
   streetAddressComplement?: string;
   @ApiProperty({ nullable: true })
+  neighborhood?: string;
+  @ApiProperty({ nullable: true })
   city?: string;
   @ApiProperty({ nullable: true })
   state?: string;
@@ -29,4 +31,17 @@ export class LeadCreateDto {
 
   @ApiProperty({ nullable: true })
   distritoSelecionado?: string;
+
+  @ApiProperty({ nullable: true })
+  valorInicialRenda?: number;
+
+  @ApiProperty({ nullable: true })
+  valorFinalRenda?: number;
+
+  @ApiProperty({ nullable: true })
+  quantidadeMembrosNaFamilia?: number;
+  @ApiProperty({ nullable: true })
+  quantidadeFilhos?: number;
+  @ApiProperty({ nullable: true })
+  idadeDosFilhos?: string;
 }
